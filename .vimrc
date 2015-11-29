@@ -12,11 +12,6 @@ autocmd VimResized * :wincmd =
 set guioptions-=r
 set guioptions-=L
 
-" Enable filetype plugins
-
-filetype plugin on
-filetype indent on
-
 " Set to auto read when a file is changed from the outside
 set autoread
 
@@ -29,7 +24,7 @@ set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc,*.pyc,*.bak,*.swp,*
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
@@ -54,12 +49,12 @@ set noswapfile
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set background=dark
-colorscheme onedark
-
 " Enable syntax highlighting
 syntax enable
-
+syntax on
+set background=dark
+colorscheme onedark
+let g:onedark_termcolors=256
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -151,3 +146,8 @@ let g:flake8_ignore="E501"
 
 " calls flake8 plugin even the file is saved
 autocmd BufWritePost *.py call Flake8()
+" Enable filetype plugins
+
+filetype plugin on
+filetype indent on
+filetype on
