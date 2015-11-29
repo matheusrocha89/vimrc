@@ -135,6 +135,8 @@ Plug 'groenewege/vim-less'
 Plug 'jiangmiao/auto-pairs'
 Plug 'othree/html5.vim'
 Plug 'nvie/vim-flake8'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'myusuf3/numbers.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -146,8 +148,11 @@ let g:flake8_ignore="E501"
 
 " calls flake8 plugin even the file is saved
 autocmd BufWritePost *.py call Flake8()
-" Enable filetype plugins
 
+" Enable filetype plugins
 filetype plugin on
 filetype indent on
 filetype on
+
+" Remaping keys for numbers plugin
+nnoremap <F3> :NumbersToggle<CR>
