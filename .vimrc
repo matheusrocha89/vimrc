@@ -137,6 +137,8 @@ Plug 'othree/html5.vim'
 Plug 'nvie/vim-flake8'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'myusuf3/numbers.vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -156,3 +158,9 @@ filetype on
 
 " Remaping keys for numbers plugin
 nnoremap <F3> :NumbersToggle<CR>
+
+" Remaping nerdtree shortcut
+map <C-n> :NERDTreeToggle<CR>
+
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
