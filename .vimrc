@@ -68,10 +68,18 @@ set smarttab
 " 1 tab == 2 spaces
 set shiftwidth=2
 set tabstop=2
+set softtabstop=2
 
-set ai "Auto indent
-set si "Smart indent
+" Yank and past with the same clipboard
+set clipboard=unnamed  
 
+" set ai "Auto indent
+" set si "Smart indent
+
+" increase height of focused screen part
+set winheight=5
+set winminheight=5
+set winheight=9999
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -139,6 +147,8 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'myusuf3/numbers.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
