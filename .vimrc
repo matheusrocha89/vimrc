@@ -157,9 +157,6 @@ call plug#end()
 " Plugin configurations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Flake8 ignore identation
-let g:flake8_ignore="E501"
-
 " calls flake8 plugin even the file is saved
 autocmd BufWritePost *.py call Flake8()
 
