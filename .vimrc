@@ -55,6 +55,7 @@ syntax on
 set background=dark
 colorscheme onedark
 let g:onedark_termcolors=256
+set cursorline
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
