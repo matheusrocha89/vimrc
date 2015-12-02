@@ -9,6 +9,10 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Basic configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -171,6 +175,7 @@ call plug#end()
 " calls flake8 plugin even the file is saved
 autocmd BufWritePost *.py call Flake8()
 
+let g:ycm_autoclose_preview_window_after_completion = 1 
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
