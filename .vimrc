@@ -67,8 +67,8 @@ set noswapfile
 " Enable syntax highlighting
 syntax enable
 syntax on
-set background=dark
-colorscheme hybrid_material 
+set background=light
+colorscheme onedark 
 " let g:onedark_termcolors=256
 set cursorline
 
