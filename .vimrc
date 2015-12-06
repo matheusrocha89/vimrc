@@ -20,8 +20,12 @@ set number
 set nowrap
 set encoding=utf-8
 set wildmode=longest,list,full
-
+" this turns off physical line wrapping (ie: automatic insertion of newlines)
+set textwidth=200
+set wrapmargin=0
+set tw=0
 autocmd VimResized * :wincmd =
+
 
 " removes the scrollbars
 set guioptions-=r
@@ -79,7 +83,7 @@ set cursorline
 set expandtab
 
 " Be smart when using tabs ;)
-set smarttab
+" set smarttab
 
 " 1 tab == 2 spaces
 set shiftwidth=2
@@ -156,9 +160,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'bling/vim-airline'
 Plug 'burnettk/vim-angular'
 Plug 'groenewege/vim-less'
-Plug 'jiangmiao/auto-pairs'
 Plug 'othree/html5.vim'
-Plug 'nvie/vim-flake8'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'myusuf3/numbers.vim'
 Plug 'Valloric/YouCompleteMe'
@@ -167,20 +169,21 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'trusktr/seti.vim'
+Plug 'andviro/flake8-vim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin configurations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" calls flake8 plugin even the file is saved
-autocmd BufWritePost *.py call Flake8()
-
+let g:PyFlakeDisabledMessages = 'E501,E111,E121,E126'
+let g:PyFlakeMaxLineLength = 200
+let g:PyFlakeOnWrite = 1
+let g:PyFlakeSigns = 0 
 let g:ycm_autoclose_preview_window_after_completion = 1 
+let g:EditorConfig_preserve_formatoptions = 1
+let g:ctrlp_custom_ignore = 'node_modules/*'
 " Enable filetype plugins
-filetype plugin on
-filetype indent on
-filetype on
+filetype plugin indent on
 
 " Remaping keys for numbers plugin
 nnoremap <F3> :NumbersToggle<CR>
@@ -190,3 +193,4 @@ map <C-n> :NERDTreeToggle<CR>
 
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd FileType,BufNewFile,BufReadPost * set formatoptions-=t 
