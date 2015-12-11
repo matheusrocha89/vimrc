@@ -97,8 +97,8 @@ set clipboard=unnamed
 " set si "Smart indent
 
 " increase height of focused screen part
-set winheight=5
-set winminheight=5
+set winheight=3
+set winminheight=3
 set winheight=9999
 
 """"""""""""""""""""""""""""""
@@ -162,6 +162,7 @@ Plug 'burnettk/vim-angular'
 Plug 'groenewege/vim-less'
 Plug 'othree/html5.vim'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'xolox/vim-session'
 Plug 'myusuf3/numbers.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
@@ -170,6 +171,7 @@ Plug 'tpope/vim-commentary'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'trusktr/seti.vim'
 Plug 'andviro/flake8-vim'
+Plug 'xolox/vim-misc'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -177,11 +179,14 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:PyFlakeDisabledMessages = 'E501,E111,E121,E126'
 let g:PyFlakeMaxLineLength = 200
-let g:PyFlakeOnWrite = 1
+let g:PyFlakeOnWrite = 0 
 let g:PyFlakeSigns = 0 
+let g:ycm_auto_trigger = 0
 let g:ycm_autoclose_preview_window_after_completion = 1 
 let g:EditorConfig_preserve_formatoptions = 1
 let g:ctrlp_custom_ignore = 'node_modules/*'
+let g:airline_section_b = ''
+let g:session_autosave = 'yes'
 " Enable filetype plugins
 filetype plugin indent on
 
