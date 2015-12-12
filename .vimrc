@@ -71,9 +71,28 @@ set noswapfile
 " Enable syntax highlighting
 syntax enable
 syntax on
-set background=light
-colorscheme onedark 
-" let g:onedark_termcolors=256
+set background=dark
+" colorscheme onedark 
+let g:onedark_termcolors=256
+colorscheme seti
+" colorscheme buddy
+" colorscheme hybrid_material
+" colorscheme material
+" colorscheme materialbox
+" colorscheme vendetta
+" colorscheme Tomorrow-Night-Bright
+" colorscheme Tomorrow-Night-Eighties
+" colorscheme Tomorrow-Night
+" colorscheme atom-dark-256
+" colroscheme coffee
+" colorscheme flattened_dark
+" colorscheme flattown
+" colorscheme heroku
+" colroscheme madeofcode
+" colroscheme molokai
+" colorscheme monochrome
+" colroscheme mrkn256
+" colorscheme rdark
 set cursorline
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
