@@ -147,6 +147,8 @@ nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+nmap <S-Enter> O<Esc>j
+nmap <CR> o<Esc>k
 
 if has("mac") || has("macunix")
   nmap <D-j> <M-j>
@@ -206,6 +208,8 @@ let g:EditorConfig_preserve_formatoptions = 1
 let g:ctrlp_custom_ignore = 'node_modules/*'
 let g:airline_section_b = ''
 let g:session_autosave = 'yes'
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
 " Enable filetype plugins
 filetype plugin indent on
 
