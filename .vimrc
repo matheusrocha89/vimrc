@@ -74,7 +74,7 @@ syntax on
 set background=dark
 " colorscheme onedark 
 let g:onedark_termcolors=256
-colorscheme seti
+" colorscheme seti
 " colorscheme buddy
 " colorscheme hybrid_material
 " colorscheme material
@@ -88,10 +88,10 @@ colorscheme seti
 " colorscheme flattened_dark
 " colorscheme flattown
 " colorscheme heroku
-" colroscheme madeofcode
-" colroscheme molokai
+" colorscheme madeofcode
+" colorscheme molokai
 " colorscheme monochrome
-" colroscheme mrkn256
+colorscheme mrkn256
 " colorscheme rdark
 set cursorline
 
