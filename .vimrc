@@ -78,20 +78,20 @@ let g:onedark_termcolors=256
 " colorscheme buddy
 " colorscheme hybrid_material
 " colorscheme material
-" colorscheme materialbox
+colorscheme materialbox
 " colorscheme vendetta
 " colorscheme Tomorrow-Night-Bright
 " colorscheme Tomorrow-Night-Eighties
 " colorscheme Tomorrow-Night
 " colorscheme atom-dark-256
-" colroscheme coffee
+" colorscheme coffee
 " colorscheme flattened_dark
 " colorscheme flattown
 " colorscheme heroku
 " colorscheme madeofcode
 " colorscheme molokai
 " colorscheme monochrome
-colorscheme mrkn256
+" colorscheme mrkn256
 " colorscheme rdark
 set cursorline
 
@@ -193,6 +193,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'trusktr/seti.vim'
 Plug 'andviro/flake8-vim'
 Plug 'xolox/vim-misc'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -210,6 +211,7 @@ let g:airline_section_b = ''
 let g:session_autosave = 'yes'
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+let g:AutoPairsMapCR = 0
 " Enable filetype plugins
 filetype plugin indent on
 
