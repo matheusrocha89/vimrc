@@ -72,13 +72,13 @@ set noswapfile
 syntax enable
 syntax on
 set background=dark
-" colorscheme onedark 
 let g:onedark_termcolors=256
+colorscheme onedark 
 " colorscheme seti
 " colorscheme buddy
 " colorscheme hybrid_material
 " colorscheme material
-colorscheme materialbox
+" colorscheme materialbox
 " colorscheme vendetta
 " colorscheme Tomorrow-Night-Bright
 " colorscheme Tomorrow-Night-Eighties
@@ -181,8 +181,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'bling/vim-airline'
 Plug 'burnettk/vim-angular'
 Plug 'groenewege/vim-less'
-Plug 'othree/html5.vim'
-Plug 'ekalinin/Dockerfile.vim'
+Plug 'rstacruz/sparkup'
 Plug 'xolox/vim-session'
 Plug 'myusuf3/numbers.vim'
 Plug 'Valloric/YouCompleteMe'
@@ -219,7 +218,7 @@ filetype plugin indent on
 nnoremap <F3> :NumbersToggle<CR>
 
 " Remaping nerdtree shortcut
-map <C-n> :NERDTreeToggle<CR>
+map <F7> :NERDTreeToggle<CR>
 
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
