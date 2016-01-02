@@ -193,6 +193,7 @@ Plug 'trusktr/seti.vim'
 Plug 'andviro/flake8-vim'
 Plug 'xolox/vim-misc'
 Plug 'jiangmiao/auto-pairs'
+Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -202,7 +203,7 @@ let g:PyFlakeDisabledMessages = 'E501,E111,E121,E126'
 let g:PyFlakeMaxLineLength = 200
 let g:PyFlakeOnWrite = 0 
 let g:PyFlakeSigns = 0 
-let g:ycm_auto_trigger = 0
+let g:ycm_auto_trigger = 1
 let g:ycm_autoclose_preview_window_after_completion = 1 
 let g:EditorConfig_preserve_formatoptions = 1
 let g:ctrlp_custom_ignore = 'node_modules/*'
