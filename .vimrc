@@ -215,6 +215,7 @@ Plug 'andviro/flake8-vim'
 Plug 'xolox/vim-misc'
 Plug 'jiangmiao/auto-pairs'
 Plug 'leafgarland/typescript-vim'
+Plug 'gcmt/taboo.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -233,6 +234,8 @@ let g:session_autosave = 'yes'
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:AutoPairsMapCR = 0
+" Taboo config
+set sessionoptions+=tabpages,globals
 " Enable filetype plugins
 filetype plugin indent on
 
