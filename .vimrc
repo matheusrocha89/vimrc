@@ -116,8 +116,8 @@ set clipboard=unnamed
 " set si "Smart indent
 
 " increase height of focused screen part
-set winheight=3
-set winminheight=3
+set winheight=5
+set winminheight=5
 set winheight=9999
 
 """"""""""""""""""""""""""""""
@@ -156,7 +156,28 @@ if has("mac") || has("macunix")
   vmap <D-j> <M-j>
   vmap <D-k> <M-k>
 endif
+"""""""""""""""""""""""""""
+" Remaping :only to maximize current pane
+"""""""""""""""""""""""""""
+nnoremap <C-W>O :call MaximizeToggle()<CR>
+nnoremap <C-W>o :call MaximizeToggle()<CR>
+nnoremap <C-W><C-O> :call MaximizeToggle()<CR>
 
+function! MaximizeToggle()
+  if exists("s:maximize_session")
+    exec "source " . s:maximize_session
+    call delete(s:maximize_session)
+    unlet s:maximize_session
+    let &hidden=s:maximize_hidden_save
+    unlet s:maximize_hidden_save
+  else
+    let s:maximize_hidden_save = &hidden
+    let s:maximize_session = tempname()
+    set hidden
+    exec "mksession! " . s:maximize_session
+    only
+  endif
+endfunction
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
   exe "normal mz"
