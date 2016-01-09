@@ -227,6 +227,7 @@ let g:PyFlakeOnWrite = 0
 let g:PyFlakeSigns = 0 
 let g:ycm_auto_trigger = 1
 let g:ycm_autoclose_preview_window_after_completion = 1 
+let g:ycm_disable_for_files_larger_than_kb = 460
 let g:EditorConfig_preserve_formatoptions = 1
 let g:ctrlp_custom_ignore = 'node_modules/*'
 let g:airline_section_b = ''
