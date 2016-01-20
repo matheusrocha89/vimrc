@@ -217,6 +217,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'leafgarland/typescript-vim'
 Plug 'gcmt/taboo.vim'
 Plug 'gorodinskiy/vim-coloresque'
+Plug 'jparise/vim-graphql'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
