@@ -64,7 +64,6 @@ set nobackup
 set nowb
 set noswapfile
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -73,17 +72,15 @@ syntax enable
 syntax on
 set background=dark
 let g:onedark_termcolors=256
-colorscheme onedark 
+" colorscheme onedark 
 " colorscheme seti
-" colorscheme buddy
 " colorscheme hybrid_material
-" colorscheme material
 " colorscheme materialbox
 " colorscheme vendetta
 " colorscheme Tomorrow-Night-Bright
 " colorscheme Tomorrow-Night-Eighties
 " colorscheme Tomorrow-Night
-" colorscheme atom-dark-256
+colorscheme atom-dark-256
 " colorscheme coffee
 " colorscheme flattened_dark
 " colorscheme flattown
@@ -189,7 +186,6 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 "Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
 Plug 'rking/ag.vim'
@@ -218,6 +214,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'gcmt/taboo.vim'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'jparise/vim-graphql'
+Plug 'scrooloose/syntastic'
+Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -251,3 +249,40 @@ map <F7> :NERDTreeToggle<CR>
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd FileType,BufNewFile,BufReadPost * set formatoptions-=t 
+" FZF
+let s:fzf_go = '/usr/local/bin/fzf'
+let s:fzf_tmux = '/usr/local/bin/fzf-tmux'
+map <C-P> :Files<CR>
+
+" list buffers
+function! s:buflist()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
+
+function! s:bufopen(e)
+  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+nnoremap <silent> <Leader><Enter> :call fzf#run({
+\   'source':  reverse(<sid>buflist()),
+\   'sink':    function('<sid>bufopen'),
+\   'options': '+m',
+\   'down':    len(<sid>buflist()) + 2
+\ })<CR>
+nnoremap K :Ag <C-R><C-W><CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration syntastic
+" """"""""""""""""""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_wq = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_javascript_checkers = ['eslint']
