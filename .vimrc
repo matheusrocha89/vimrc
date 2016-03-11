@@ -196,18 +196,17 @@ Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'bling/vim-airline'
-Plug 'burnettk/vim-angular'
+Plug 'burnettk/vim-angular', {'for': 'javascript'}
 Plug 'groenewege/vim-less'
-Plug 'rstacruz/sparkup'
+Plug 'rstacruz/sparkup', {'for': 'html'}
 Plug 'xolox/vim-session'
-Plug 'myusuf3/numbers.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'trusktr/seti.vim'
-Plug 'andviro/flake8-vim'
+Plug 'andviro/flake8-vim', {'for': 'python'}
 Plug 'xolox/vim-misc'
 Plug 'jiangmiao/auto-pairs'
 Plug 'leafgarland/typescript-vim'
@@ -216,6 +215,7 @@ Plug 'gorodinskiy/vim-coloresque'
 Plug 'jparise/vim-graphql'
 Plug 'scrooloose/syntastic'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'flowtype/vim-flow', {'for': 'javascript'}
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
