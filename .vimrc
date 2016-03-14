@@ -287,7 +287,12 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
+let g:flow#autoclose = 0
+let g:flow#enable = 0
 
 " Visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv
+
+" Enabling mouse scroll on vim inside iterm2
+set mouse=nicr
