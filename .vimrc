@@ -6,12 +6,27 @@
 let mapleader = ","
 let g:mapleader = ","
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " Fast saving
+""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>w :w!<cr>
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " Configure backspace so it acts as it should act
+""""""""""""""""""""""""""""""""""""""""""""""
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Visual shifting (does not exit Visual mode)
+""""""""""""""""""""""""""""""""""""""""""""""
+vnoremap < <gv
+vnoremap > >gv
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Enabling mouse scroll on vim inside iterm2
+""""""""""""""""""""""""""""""""""""""""""""""
+set mouse=nicr
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Basic configuration
@@ -27,32 +42,50 @@ set tw=0
 autocmd VimResized * :wincmd =
 
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " removes the scrollbars
+""""""""""""""""""""""""""""""""""""""""""""""
 set guioptions-=r
 set guioptions-=L
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " Set to auto read when a file is changed from the outside
+""""""""""""""""""""""""""""""""""""""""""""""
 set autoread
 
+""""""""""""""""""""""""""""""""""""""""""""""
 "Always show current position
+""""""""""""""""""""""""""""""""""""""""""""""
 set ruler
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " Ignore compiled files
+""""""""""""""""""""""""""""""""""""""""""""""
 set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc,*.pyc,*.bak,*.swp,*.class
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " Ignore case when searching
+""""""""""""""""""""""""""""""""""""""""""""""
 set ignorecase
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " When searching try to be smart about cases
+""""""""""""""""""""""""""""""""""""""""""""""
 set smartcase
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " Highlight search results
+""""""""""""""""""""""""""""""""""""""""""""""
 set hlsearch
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " Makes search act like search in modern browsers
+""""""""""""""""""""""""""""""""""""""""""""""
 set incsearch
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " Show matching brackets when text indicator is over them
+""""""""""""""""""""""""""""""""""""""""""""""
 set showmatch
 
 
@@ -98,21 +131,29 @@ set cursorline
 " Use spaces instead of tabs
 set expandtab
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " Be smart when using tabs ;)
+""""""""""""""""""""""""""""""""""""""""""""""
 " set smarttab
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " 1 tab == 2 spaces
+""""""""""""""""""""""""""""""""""""""""""""""
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " Yank and past with the same clipboard
+""""""""""""""""""""""""""""""""""""""""""""""
 set clipboard=unnamed  
 
 " set ai "Auto indent
 " set si "Smart indent
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " increase height of focused screen part
+""""""""""""""""""""""""""""""""""""""""""""""
 set winheight=5
 set winminheight=5
 set winheight=9999
@@ -175,7 +216,10 @@ function! MaximizeToggle()
     only
   endif
 endfunction
+
+""""""""""""""""""""""""""""""""""""""""""""""
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
+""""""""""""""""""""""""""""""""""""""""""""""
 func! DeleteTrailingWS()
   exe "normal mz"
   %s/\s\+$//ge
@@ -184,7 +228,9 @@ endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
+""""""""""""""""""""""""""""""""""""""""""""""
 "Plugins
+""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
@@ -221,40 +267,92 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin configurations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration Flake
+""""""""""""""""""""""""""""""""""""""""""""""
 let g:PyFlakeDisabledMessages = 'E501,E111,E121,E126'
 let g:PyFlakeMaxLineLength = 200
 let g:PyFlakeOnWrite = 0 
 let g:PyFlakeSigns = 0 
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration YouCompleteMe
+""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_auto_trigger = 1
 let g:ycm_autoclose_preview_window_after_completion = 1 
 let g:ycm_disable_for_files_larger_than_kb = 460
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration EditorConfig
+""""""""""""""""""""""""""""""""""""""""""""""
 let g:EditorConfig_preserve_formatoptions = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration ctrlp
+""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_custom_ignore = 'node_modules/*'
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration airline
+""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_section_b = ''
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration session
+""""""""""""""""""""""""""""""""""""""""""""""
 let g:session_autosave = 'yes'
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration indent guides
+""""""""""""""""""""""""""""""""""""""""""""""
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration AutoPairs
+""""""""""""""""""""""""""""""""""""""""""""""
 let g:AutoPairsMapCR = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""
 " Taboo config
+""""""""""""""""""""""""""""""""""""""""""""""
 set sessionoptions+=tabpages,globals
+
+""""""""""""""""""""""""""""""""""""""""""""""
 " Enable filetype plugins
+""""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin indent on
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " Remaping keys for numbers plugin
+""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F3> :NumbersToggle<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " Remaping nerdtree shortcut
+""""""""""""""""""""""""""""""""""""""""""""""
 map <F7> :NERDTreeToggle<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " close vim if the only window left open is a NERDTree
+""""""""""""""""""""""""""""""""""""""""""""""
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd FileType,BufNewFile,BufReadPost * set formatoptions-=t 
+
+""""""""""""""""""""""""""""""""""""""""""""""
 " FZF
+""""""""""""""""""""""""""""""""""""""""""""""
 let s:fzf_go = '/usr/local/bin/fzf'
 let s:fzf_tmux = '/usr/local/bin/fzf-tmux'
 map <C-P> :Files<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""
 " list buffers
+""""""""""""""""""""""""""""""""""""""""""""""
 function! s:buflist()
   redir => ls
   silent ls
@@ -275,8 +373,8 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 nnoremap K :Ag <C-R><C-W><CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""
-" Configuration syntastic
-" """"""""""""""""""""""""""""""""""""""""""""""
+" Configurations syntastic
+""""""""""""""""""""""""""""""""""""""""""""""
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -287,12 +385,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Configurations flow
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:flow#autoclose = 0
 let g:flow#enable = 0
 
-" Visual shifting (does not exit Visual mode)
-vnoremap < <gv
-vnoremap > >gv
-
-" Enabling mouse scroll on vim inside iterm2
-set mouse=nicr
