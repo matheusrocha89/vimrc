@@ -289,11 +289,6 @@ let g:ycm_disable_for_files_larger_than_kb = 460
 let g:EditorConfig_preserve_formatoptions = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""
-" Configuration ctrlp
-""""""""""""""""""""""""""""""""""""""""""""""
-let g:ctrlp_custom_ignore = 'node_modules/*'
-
-""""""""""""""""""""""""""""""""""""""""""""""
 " Configuration airline
 """"""""""""""""""""""""""""""""""""""""""""""
 let g:airline_section_b = ''
@@ -348,7 +343,7 @@ autocmd FileType,BufNewFile,BufReadPost * set formatoptions-=t
 """"""""""""""""""""""""""""""""""""""""""""""
 let s:fzf_go = '/usr/local/bin/fzf'
 let s:fzf_tmux = '/usr/local/bin/fzf-tmux'
-map <C-P> :Files<CR>
+map <C-P> :GitFiles<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " list buffers
