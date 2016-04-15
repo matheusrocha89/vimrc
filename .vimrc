@@ -262,6 +262,7 @@ Plug 'jparise/vim-graphql'
 Plug 'scrooloose/syntastic'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'flowtype/vim-flow', {'for': 'javascript'}
+Plug 'rizzatti/dash.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
