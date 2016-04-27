@@ -263,6 +263,7 @@ Plug 'scrooloose/syntastic'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'flowtype/vim-flow', {'for': 'javascript'}
 Plug 'rizzatti/dash.vim'
+Plug 'codegram/vim-codereview'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -388,3 +389,8 @@ let g:syntastic_javascript_eslint_exec = 'eslint_d'
 let g:flow#autoclose = 0
 let g:flow#enable = 0
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration to fuse tools
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufRead,BufNewFile *.uno setfiletype cs    
+autocmd BufRead,BufNewFile *.uxl,*.ux setfiletype xml
