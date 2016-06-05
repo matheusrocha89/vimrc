@@ -106,14 +106,14 @@ syntax on
 set background=dark
 let g:onedark_termcolors=256
 " colorscheme onedark 
-" colorscheme seti
+colorscheme seti
 " colorscheme hybrid_material
 " colorscheme materialbox
 " colorscheme vendetta
 " colorscheme Tomorrow-Night-Bright
 " colorscheme Tomorrow-Night-Eighties
 " colorscheme Tomorrow-Night
-colorscheme atom-dark-256
+" colorscheme atom-dark-256
 " colorscheme coffee
 " colorscheme flattened_dark
 " colorscheme flattown
@@ -123,7 +123,7 @@ colorscheme atom-dark-256
 " colorscheme monochrome
 " colorscheme mrkn256
 " colorscheme rdark
-set cursorline
+" set cursorline
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -232,6 +232,7 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 "Plugins
 """"""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
+Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
 Plug 'rking/ag.vim'
@@ -241,7 +242,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'bling/vim-airline'
 Plug 'burnettk/vim-angular', {'for': 'javascript'}
 Plug 'groenewege/vim-less'
 Plug 'rstacruz/sparkup', {'for': 'html'}
@@ -382,6 +382,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
+" Configuration for ionic HTML tags
+let g:syntastic_html_tidy_ignore_errors=["<ion-", "discarding unexpected </ion-", " proprietary attribute \"ng-"]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Configurations flow
