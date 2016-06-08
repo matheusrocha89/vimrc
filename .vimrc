@@ -264,6 +264,7 @@ Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'flowtype/vim-flow', {'for': 'javascript'}
 Plug 'rizzatti/dash.vim'
 Plug 'codegram/vim-codereview'
+Plug 'JamshedVesuna/vim-markdown-preview', {'for': 'markdown'}
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -396,3 +397,9 @@ let g:flow#enable = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufRead,BufNewFile *.uno setfiletype cs    
 autocmd BufRead,BufNewFile *.uxl,*.ux setfiletype xml
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration to live markdown preview
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+let vim_markdown_preview_github=1
+let vim_markdown_preview_hotkey='<C-m>'
