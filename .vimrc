@@ -353,7 +353,7 @@ let NERDTreeIgnore = ['^node_modules/*', '^\.git/*']
 """"""""""""""""""""""""""""""""""""""""""""""
 let s:fzf_go = '/usr/local/bin/fzf'
 let s:fzf_tmux = '/usr/local/bin/fzf-tmux'
-map <C-P> :GitFiles<CR>
+map <C-P> :GFiles<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " list buffers
