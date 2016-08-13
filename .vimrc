@@ -105,7 +105,7 @@ syntax enable
 syntax on
 set background=dark
 let g:onedark_termcolors=256
-" colorscheme onedark 
+" colorscheme onedark
 colorscheme seti
 " colorscheme hybrid_material
 " colorscheme materialbox
@@ -146,7 +146,7 @@ set softtabstop=2
 """"""""""""""""""""""""""""""""""""""""""""""
 " Yank and past with the same clipboard
 """"""""""""""""""""""""""""""""""""""""""""""
-set clipboard=unnamed  
+set clipboard^=unnamed
 
 " set ai "Auto indent
 " set si "Smart indent
@@ -225,8 +225,11 @@ func! DeleteTrailingWS()
   %s/\s\+$//ge
   exe "normal `z"
 endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
+autocmd BufWritePre * %s/\s\+$//e
+" autocmd BufWrite *.py :call DeleteTrailingWS()
+" autocmd BufWrite *.coffee :call DeleteTrailingWS()
+" autocmd BufWrite *.js :call DeleteTrailingWS()
+" autocmd BufWrite *.jVkk :call DeleteTrailingWS()
 
 """"""""""""""""""""""""""""""""""""""""""""""
 "Plugins
@@ -236,7 +239,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
 Plug 'rking/ag.vim'
-Plug 'Glench/Vim-Jinja2-Syntax', {'for': 'html'}
+Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'mxw/vim-jsx'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'pangloss/vim-javascript'
@@ -275,14 +278,14 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""
 let g:PyFlakeDisabledMessages = 'E501,E111,E121,E126'
 let g:PyFlakeMaxLineLength = 200
-let g:PyFlakeOnWrite = 0 
-let g:PyFlakeSigns = 0 
+let g:PyFlakeOnWrite = 0
+let g:PyFlakeSigns = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " Configuration YouCompleteMe
 """"""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_auto_trigger = 1
-let g:ycm_autoclose_preview_window_after_completion = 1 
+let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_disable_for_files_larger_than_kb = 460
 
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -338,7 +341,12 @@ map <F7> :NERDTreeToggle<CR>
 " close vim if the only window left open is a NERDTree
 """"""""""""""""""""""""""""""""""""""""""""""
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd FileType,BufNewFile,BufReadPost * set formatoptions-=t 
+autocmd FileType,BufNewFile,BufReadPost * set formatoptions-=t
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Ignore some folders or files on NERDTreee
+""""""""""""""""""""""""""""""""""""""""""""""
+let NERDTreeIgnore = ['^node_modules/*', '^\.git/*']
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " FZF
@@ -394,5 +402,5 @@ let g:flow#enable = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Configuration to fuse tools
 """""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd BufRead,BufNewFile *.uno setfiletype cs    
+autocmd BufRead,BufNewFile *.uno setfiletype cs
 autocmd BufRead,BufNewFile *.uxl,*.ux setfiletype xml
