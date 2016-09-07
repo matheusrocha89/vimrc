@@ -235,6 +235,7 @@ autocmd BufWritePre * %s/\s\+$//e
 "Plugins
 """"""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
+Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
@@ -257,7 +258,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'trusktr/seti.vim'
 Plug 'andviro/flake8-vim', {'for': 'python'}
 Plug 'xolox/vim-misc'
-Plug 'jiangmiao/auto-pairs'
+Plug 'vim-scripts/auto-pairs-gentle'
 Plug 'leafgarland/typescript-vim'
 Plug 'gcmt/taboo.vim'
 Plug 'gorodinskiy/vim-coloresque'
@@ -267,6 +268,7 @@ Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'flowtype/vim-flow', {'for': 'javascript'}
 Plug 'rizzatti/dash.vim'
 Plug 'codegram/vim-codereview'
+Plug 'posva/vim-vue'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -313,6 +315,7 @@ let g:indent_guides_guide_size = 1
 " Configuration AutoPairs
 """"""""""""""""""""""""""""""""""""""""""""""
 let g:AutoPairsMapCR = 0
+let g:AutoPairsUseInsertedCount = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -404,3 +407,14 @@ let g:flow#enable = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufRead,BufNewFile *.uno setfiletype cs
 autocmd BufRead,BufNewFile *.uxl,*.ux setfiletype xml
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration to ect
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufRead,BufNewFile *.ect setfiletype html
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set autoread
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+set autoread
+
