@@ -12,6 +12,11 @@ let g:mapleader = ","
 nmap <leader>w :w!<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""
+" Fast quiting
+""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>q :q!<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""
 " Configure backspace so it acts as it should act
 """"""""""""""""""""""""""""""""""""""""""""""
 set backspace=eol,start,indent
@@ -235,6 +240,7 @@ autocmd BufWritePre * %s/\s\+$//e
 "Plugins
 """"""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-obsession'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
