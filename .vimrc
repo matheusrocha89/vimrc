@@ -111,7 +111,7 @@ syntax on
 set background=dark
 let g:onedark_termcolors=256
 " colorscheme onedark
-colorscheme seti
+" colorscheme seti
 " colorscheme hybrid_material
 " colorscheme materialbox
 " colorscheme vendetta
@@ -128,6 +128,12 @@ colorscheme seti
 " colorscheme monochrome
 " colorscheme mrkn256
 " colorscheme rdark
+" colorscheme seattle
+" colorscheme two-firewatch
+" colorscheme one
+" colorscheme paramount
+colorscheme blues
+" colorscheme wwdc16
 " set cursorline
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
