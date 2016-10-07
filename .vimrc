@@ -17,6 +17,12 @@ nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""
+" Fast Zoom Pane
+""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <Leader>1 <C-w><Bar><C-w>_
+nnoremap <Leader>0 <C-w>=
+
+""""""""""""""""""""""""""""""""""""""""""""""
 " Configure backspace so it acts as it should act
 """"""""""""""""""""""""""""""""""""""""""""""
 set backspace=eol,start,indent
