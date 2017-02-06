@@ -139,6 +139,8 @@ let g:onedark_termcolors=256
 " colorscheme one
 " colorscheme paramount
 colorscheme blues
+" colorscheme nord
+" colorscheme nordisk
 " colorscheme wwdc16
 " set cursorline
 
@@ -171,8 +173,8 @@ set clipboard^=unnamed
 """"""""""""""""""""""""""""""""""""""""""""""
 " increase height of focused screen part
 """"""""""""""""""""""""""""""""""""""""""""""
-set winheight=5
-set winminheight=5
+set winheight=3
+set winminheight=3
 set winheight=9999
 
 """"""""""""""""""""""""""""""
@@ -212,6 +214,7 @@ autocmd BufWritePre * %s/\s\+$//e
 "Plugins
 """"""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
+Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-obsession'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'terryma/vim-multiple-cursors'
@@ -392,7 +395,16 @@ autocmd BufRead,BufNewFile *.uxl,*.ux setfiletype xml
 autocmd BufRead,BufNewFile *.ect setfiletype html
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
+" GO VIM
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:go_fmt_autosave = 0
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set autoread
 """""""""""""""""""""""""""""""""""""""""""""""""""
 set autoread
+
+
 
