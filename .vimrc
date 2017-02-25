@@ -226,7 +226,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'burnettk/vim-angular', {'for': 'javascript'}
 Plug 'groenewege/vim-less'
 Plug 'rstacruz/sparkup', {'for': 'html'}
 Plug 'Valloric/YouCompleteMe'
