@@ -165,7 +165,7 @@ set softtabstop=2
 """"""""""""""""""""""""""""""""""""""""""""""
 " Yank and past with the same clipboard
 """"""""""""""""""""""""""""""""""""""""""""""
-set clipboard^=unnamed
+set clipboard=unnamed
 
 " set ai "Auto indent
 " set si "Smart indent
@@ -215,7 +215,6 @@ autocmd BufWritePre * %s/\s\+$//e
 """"""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
-Plug 'tpope/vim-obsession'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
@@ -230,7 +229,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'burnettk/vim-angular', {'for': 'javascript'}
 Plug 'groenewege/vim-less'
 Plug 'rstacruz/sparkup', {'for': 'html'}
-Plug 'xolox/vim-session'
 Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
@@ -275,16 +273,6 @@ let g:ycm_disable_for_files_larger_than_kb = 460
 " Configuration EditorConfig
 """"""""""""""""""""""""""""""""""""""""""""""
 let g:EditorConfig_preserve_formatoptions = 1
-
-""""""""""""""""""""""""""""""""""""""""""""""
-" Configuration airline
-""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_section_b = ''
-
-""""""""""""""""""""""""""""""""""""""""""""""
-" Configuration session
-""""""""""""""""""""""""""""""""""""""""""""""
-let g:session_autosave = 'yes'
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " Configuration indent guides
