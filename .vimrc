@@ -136,9 +136,9 @@ let g:onedark_termcolors=256
 " colorscheme rdark
 " colorscheme seattle
 " colorscheme two-firewatch
-" colorscheme one
+colorscheme one
 " colorscheme paramount
-colorscheme blues
+" colorscheme blues
 " colorscheme nord
 " colorscheme nordisk
 " colorscheme wwdc16
