@@ -238,15 +238,10 @@ Plug 'andviro/flake8-vim', {'for': 'python'}
 Plug 'xolox/vim-misc'
 Plug 'vim-scripts/auto-pairs-gentle'
 Plug 'leafgarland/typescript-vim'
-Plug 'gcmt/taboo.vim'
-Plug 'gorodinskiy/vim-coloresque'
 Plug 'jparise/vim-graphql'
 Plug 'scrooloose/syntastic'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'flowtype/vim-flow', {'for': 'javascript'}
-Plug 'rizzatti/dash.vim'
-Plug 'codegram/vim-codereview'
-Plug 'posva/vim-vue'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -287,11 +282,6 @@ let g:AutoPairsUseInsertedCount = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-""""""""""""""""""""""""""""""""""""""""""""""
-" Taboo config
-""""""""""""""""""""""""""""""""""""""""""""""
-set sessionoptions+=tabpages,globals
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " Enable filetype plugins
@@ -371,12 +361,6 @@ let g:flow#autoclose = 0
 let g:flow#enable = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
-" Configuration to fuse tools
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd BufRead,BufNewFile *.uno setfiletype cs
-autocmd BufRead,BufNewFile *.uxl,*.ux setfiletype xml
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Configuration to ect
 """""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufRead,BufNewFile *.ect setfiletype html
@@ -392,6 +376,3 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 " Set autoread
 """""""""""""""""""""""""""""""""""""""""""""""""""
 set autoread
-
-
-
