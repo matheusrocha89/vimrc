@@ -117,13 +117,12 @@ syntax on
 set background=dark
 let g:onedark_termcolors=256
 " colorscheme onedark
-" colorscheme seti
 " colorscheme hybrid_material
 " colorscheme materialbox
 " colorscheme vendetta
 " colorscheme Tomorrow-Night-Bright
 " colorscheme Tomorrow-Night-Eighties
-" colorscheme Tomorrow-Night
+colorscheme Tomorrow-Night
 " colorscheme atom-dark-256
 " colorscheme coffee
 " colorscheme flattened_dark
@@ -136,11 +135,9 @@ let g:onedark_termcolors=256
 " colorscheme rdark
 " colorscheme seattle
 " colorscheme two-firewatch
-colorscheme one
+" colorscheme one
 " colorscheme paramount
 " colorscheme blues
-" colorscheme nord
-" colorscheme nordisk
 " colorscheme wwdc16
 " set cursorline
 
@@ -214,7 +211,7 @@ autocmd BufWritePre * %s/\s\+$//e
 "Plugins
 """"""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
-Plug 'arcticicestudio/nord-vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
@@ -228,16 +225,12 @@ Plug 'elzr/vim-json'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'groenewege/vim-less'
 Plug 'rstacruz/sparkup', {'for': 'html'}
-Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'trusktr/seti.vim'
 Plug 'andviro/flake8-vim', {'for': 'python'}
-Plug 'xolox/vim-misc'
 Plug 'vim-scripts/auto-pairs-gentle'
-Plug 'leafgarland/typescript-vim'
 Plug 'jparise/vim-graphql'
 Plug 'scrooloose/syntastic'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
@@ -255,13 +248,6 @@ let g:PyFlakeDisabledMessages = 'E501,E111,E121,E126'
 let g:PyFlakeMaxLineLength = 200
 let g:PyFlakeOnWrite = 0
 let g:PyFlakeSigns = 0
-
-""""""""""""""""""""""""""""""""""""""""""""""
-" Configuration YouCompleteMe
-""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_auto_trigger = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_disable_for_files_larger_than_kb = 460
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " Configuration EditorConfig
@@ -364,6 +350,11 @@ let g:flow#enable = 0
 " Configuration to ect
 """""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufRead,BufNewFile *.ect setfiletype html
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration Deoplete
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:deoplete#enable_at_startup = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " GO VIM
